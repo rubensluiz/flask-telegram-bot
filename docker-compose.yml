@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  web:
+    image: rubensluiz/flask-telegram-bot:latest
+    build: .
+    environment:
+      APP_WORKERS: 3
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app
