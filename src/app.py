@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import json
 application = Flask(__name__)
 
-@application.route('/')
+@application.route('/', methods=['GET'])
 def hello_world():
     return 'Hello, World!'
 
